@@ -64,8 +64,7 @@
 .sbright:after {
 	border-left: 0;
 }
-
-blockquote {
+.speech-bubble blockquote {
 	border: none;
 	margin-bottom:-30px;
 	position: relative; 
@@ -74,12 +73,7 @@ blockquote {
 	padding-left: 0.4em; 
 
 }
-
-blockquote q{
-
-}
-
-blockquote q:before { 
+.speech-bubble blockquote q:before { 
     content: "\201C";
     font-weight: bold;
     font-size:50px;
@@ -89,7 +83,7 @@ blockquote q:before {
     left: -0.5em; 
     font-family: 'Georgia'; 
 } 
-blockquote q:after { 
+.speech-bubble blockquote q:after { 
     content: "\201D";
     font-weight: bold;
     font-size:50px;
@@ -104,3 +98,31 @@ blockquote q:after {
 	float: right;
         font-weight: bold;
 }
+
+/* Mobile Overrides */
+@media only screen and (max-width: 600px) {
+	body{
+		overflow: hidden; 
+	}
+	
+	.speech-bubble {
+		padding:5px;
+		font-size: smaller;
+	}
+	
+	.speech-bubble:after {
+	    border-style: solid;
+	    border-width: 8px 12px 0;
+	    border-color: #fff transparent;
+	    z-index: 1;
+	    bottom: -8px;
+	    left: 25%;
+	    margin:0px;
+	}
+	
+	.speech-bubble p {
+		margin:0px;
+		padding-top:10px;
+	}
+}
+
